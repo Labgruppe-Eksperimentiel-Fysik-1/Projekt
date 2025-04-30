@@ -1,0 +1,74 @@
+\documentclass{memoir}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage{biblatex}
+\usepackage{romanbar}
+\usepackage{relsize}
+\usepackage{nicematrix}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}  % Extra math tools
+\usepackage{siunitx}
+\usepackage[margin=2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage[T1]{fontenc}  % Correct handling of æ, ø, and å
+\usepackage{tikz}
+\usepackage{listings} % For code listings
+\usepackage{calrsfs}
+\usepackage{derivative}
+\usepackage{pgfplots}
+\usepackage{cleveref}
+\usepackage{euscript}
+\usepackage{esvect}
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+\linespread{1.4}
+\DeclareMathOperator{\ihat}{\hat \imath}
+\DeclareMathOperator{\jhat}{\hat \jmath} % Enhedsvektor i og j
+\DeclareMathOperator{\khat}{\hat{k}}
+\DeclareMathOperator{\Lb}{\pazocal{L}}
+\DeclareMathOperator{\e}{\EuScript{E}}
+\DeclareMathOperator{\sv}{\EuScript{V}}
+\renewcommand{\thesubsection}{\alph{subsection})}
+\usetikzlibrary{positioning}
+\pgfplotsset{compat=1.18}
+\lstset{basicstyle=\ttfamily,breaklines=true}  % Example settings for lstlisting
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{teal!80!black},
+  commentstyle=\color{green!50!black},
+  stringstyle=\color{red},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  numbersep=5pt,
+  backgroundcolor=\color{white},
+  frame=single
+}
+\lstset{literate=%
+  {ø}{{\o}}1
+  {æ}{{\ae}}1
+  {å}{{\aa}}1
+} % fixing æ, ø, å in listisngs
+\ExplSyntaxOn
+\NewDocumentEnvironment { pNiceMatrixAugN|1 } { }
+  { \begin { pNiceMatrix } }
+  { 
+    \CodeAfter \tikz \draw (1-|\arabic{jCol}) -- (last-|\arabic{jCol}) ; 
+    \end { pNiceMatrix } 
+  }
+\NewDocumentEnvironment { pNiceMatrixAugNN } { m }
+  { \begin {pNiceMatrix} }
+  { 
+    \CodeAfter
+    { \tikz \draw ([xshift=2pt] 1-|\the\numexpr#1+1\relax) -- ([xshift=2pt] last-|\the\numexpr#1+1\relax) ; }
+    \end {pNiceMatrix} 
+  }  
+\ExplSyntaxOff
+
+\author{Buzoianu P, Rokkjær W. K, Jensen E. S}
+\title{Projekt i Eksperimentiel Fysik}
+\date{\today}
+\begin{document}
+    \maketitle
+\end{document}
