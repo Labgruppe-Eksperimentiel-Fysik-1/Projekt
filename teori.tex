@@ -3,13 +3,28 @@
 Betragt et system af en masse forbundet til 2 fjedrer, en i hver ende, der hver er forbundet til en væg. 
 Massen er placeret på en vandret overflade med friktionskoefficienter $\mu_s$ og $\mu_k$. 
 Fjedrernes bevægelse har også friktion med en anden friktionskoefficient $\delta_s$ og $\delta_k$. 
-Normalkraften mellem overfladen og massen, samt fjeder og masse er ikke nødvendigvis den samme, og betegnes derfor sperat med $n_1$ og $n_2$
+Normalkraften mellem overfladen og massen, samt fjeder dens overflade er ikke nødvendigvis den samme, og betegnes derfor sperat med $n_1$ og $n_2$
 Vi betegner massen af det samlede oscillerende legeme med $m$. 
 
 Newtons anden lov for systemet afhænger af hvilken retning vi bevæger os i. 
 Vi må derfor opstille Newtons anden lov 2 gange, nemlig for tilfældet med bevægelse i positiv og negativ x-retningen.
-\begin{align}
-    \Sigma F_{x_+} = -2kx - \mu_k n_1 - \delta_k n_2 \\
-    \Sigma F_{x_-} = -2kx + \mu_k n_1 + \delta_k n_2
-\end{align}
-
+\begin{align*}
+    \Sigma F_{x_+} = -2kx - \mu_k n_1 - \delta_k n_2 = ma\\
+    \Sigma F_{x_-} = -2kx + \mu_k n_1 + \delta_k n_2 = ma
+\end{align*}
+Hvis vi samler de 2 gnidningskrafter i en konstant $f_k$, får vi følgende differentialligninger
+\begin{equation}
+    \odv[order=2]{x}{t} + \frac{2k}{m}x = \pm \frac{f_k}{m}
+\end{equation}
+Dette er en inhomogen lineær anden ordens differentialligning, hvor samtlige løsninger kan findes 
+som den fuldstændige løsning til den homogene ligning plus en partikulær løsning til den inhomogene.
+Vi kan genkende den homogene differentialligning (hvor konstanten er 0), som blot værende differentialligningen for en harmonisk oscillator, 
+og vi ved derfor at den fuldstændige løsning er $x(t) = A\sin\omega t + B\cos\omega t$ hvor $\omega = \frac{2k}{m}$. Vi mangler derfor kun at finde en partikulær løsing til den inhomogene.
+Her gætter jeg på løsningen $x(t) = \pm \frac{f_k}{2k}$, da man indser
+\[
+     \odv[order=2]{\frac{f_k}{2k}}{t} + \frac{2k}{m}(\pm\frac{f_k}{2k}) = \pm \frac{f_k}{m}
+\]
+Den fuldstændige løsning til den inhomogene differentialligninger bliver altså
+\begin{equation*}
+    x(t) = A\sin\omega t + B\cos\omega t \pm \frac{f_k}{2k}
+\end{equation*}
