@@ -1,5 +1,11 @@
 \chapter{Teori}
-% Indsæt billede
+%
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.8\linewidth,origin=c]{figures/systemskitse.png}
+    \caption{Skitse af systemet (kraft betegnelser stemmer ikke overens med resten af opgaven)}
+\end{figure*}
+%
 Betragt et system af en masse forbundet til 2 fjedrer, en i hver ende, der hver er forbundet til en væg. 
 Massen er placeret på en vandret overflade med friktionskoefficienter $\mu_s$ og $\mu_k$. 
 Fjedrernes bevægelse har også friktion med en anden friktionskoefficient $\delta_s$ og $\delta_k$. 
@@ -47,14 +53,15 @@ Den kan vi nemt finde som anden gang et hastigheden er 0.
 \[
 x'(t) = \omega(x_0 - \frac{f_k}{2k})\sin \omega t = 0
 \]
-Da de andre termer ikke er 0, og $t = 0$ ikke er en valid løsning, da det er hvor bevægelses starter, må det være næste nulpunkt, nemlig $t = \frac{\pi}{\omega}$
+Da de andre termer ikke er 0, og $t = 0$ ikke er en valid løsning, da det er hvor bevægelses starter, må det være næste nulpunkt, nemlig $t = \frac{\pi}{\omega}$. 
+Let mærke til at perioden er uafhængig af amplituden.
 Indsætter vi den tid i vores udtryk for $x(t)$, får vi 
 \[
 x(\frac{\pi}{\omega}) = x_0 - \frac{f_k}{k} \equiv x_1
 \]
 Anvender vi den amplitude som startbetingelser for bevægelsen tilbage i negativ x-retningen, får vi bevægelsesligningen:
 \[
-x(t) = (x_1 - \frac{f_k}{2k})\cos \omega t + \frac{_k}{2k}
+x(t) = (x_1 - \frac{f_k}{2k})\cos \omega t + \frac{f_k}{2k}
 \]
 Hvilket leder til at den næste start amplitude bliver 
 \[
