@@ -4,36 +4,37 @@
     \centering
     \includegraphics[width=0.8\linewidth,origin=c]{figures/systemskitse.png}
     \caption{Skitse af systemet (kraft betegnelser stemmer ikke overens med resten af opgaven)}
+    \label{fig:skitse}
 \end{figure*}
 %
-Betragt et system af en masse forbundet til 2 fjedrer, en i hver ende, der hver er forbundet til en væg. 
+Betragt et system af en masse forbundet til 2 fjedrer, en i hver ende, der hver er forbundet til en væg, med fjeder konstanterne $k_1$ og $k_2$. 
 Massen er placeret på en vandret overflade med friktionskoefficienter $\mu_s$ og $\mu_k$. 
 Fjedrernes bevægelse har også friktion med en anden friktionskoefficient $\delta_s$ og $\delta_k$. 
-Normalkraften mellem overfladen og massen, samt fjeder dens overflade er ikke nødvendigvis den samme, og betegnes derfor sperat med $n_1$ og $n_2$
+Normalkraften mellem overfladen og massen, samt mellem fjeder og dens overflade er ikke nødvendigvis den samme, og betegnes derfor seperat med $n_1$ og $n_2$
 Vi betegner massen af det samlede oscillerende legeme med $m$. 
 
 Newtons anden lov for systemet afhænger af hvilken retning vi bevæger os i. 
 Vi må derfor opstille Newtons anden lov 2 gange, nemlig for tilfældet med bevægelse i positiv og negativ x-retningen. 
-Vi opstiller vores koordinatsystem sådan at 0 punktet ligger der hvor de 2 fjedrer trækker lige meget, altså fjeder systemets ligevægtsposition.
+Vi opstiller vores koordinatsystem sådan at 0 punktet ligger der hvor de 2 fjedrer trækker lige meget, altså fjeder systemets ligevægtsposition. Vi indser også at de 2 fjedrer tilsammen fungerer som en samlet fjeder med fjederkonstant $k = k_1 + k_2$.
 \begin{align*}
-    \Sigma F_{x_+} = -2kx - \mu_k n_1 - \delta_k n_2 = ma\\
-    \Sigma F_{x_-} = -2kx + \mu_k n_1 + \delta_k n_2 = ma
+    \Sigma F_{x_+} = -kx - \mu_k n_1 - \delta_k n_2 = ma\\
+    \Sigma F_{x_-} = -kx + \mu_k n_1 + \delta_k n_2 = ma
 \end{align*}
-Hvis vi samler de 2 gnidningskrafter i en konstant $f_k$, får vi følgende differentialligninger
+Hvis vi samler de 2 gnidningskrafter i en konstant $f_k$, får vi følgende differentialligninger (skrevet som en differentialligning med $\pm$ for overskuelighed)
 \begin{equation}
-    \odv[order=2]{x}{t} + \frac{2k}{m}x = \pm \frac{f_k}{m}
+    \odv[order=2]{x}{t} + \frac{k}{m}x = \pm \frac{f_k}{m}
 \end{equation}
 Dette er en inhomogen lineær anden ordens differentialligning, hvor samtlige løsninger kan findes 
 som den fuldstændige løsning til den homogene ligning plus en partikulær løsning til den inhomogene.
 Vi kan genkende den homogene differentialligning (hvor konstanten er 0), som blot værende differentialligningen for en harmonisk oscillator, 
-og vi ved derfor at den fuldstændige løsning er $x(t) = A\sin\omega t + B\cos\omega t$ hvor $\omega = \frac{2k}{m}$. Vi mangler derfor kun at finde en partikulær løsing til den inhomogene.
-Her gætter jeg på løsningen $x(t) = \pm \frac{f_k}{2k}$, da man indser
+og vi ved derfor at den fuldstændige løsning er $x(t) = A\sin\omega t + B\cos\omega t$ hvor $\omega = \frac{k}{m}$. Vi mangler derfor kun at finde en partikulær løsing til den inhomogene.
+Her gætter jeg på løsningen $x(t) = \pm \frac{f_k}{k}$, da man indser
 \[
-     \odv[order=2]{\frac{f_k}{2k}}{t} + \frac{2k}{m}(\pm\frac{f_k}{2k}) = \pm \frac{f_k}{m}
+     \odv[order=2]{\frac{f_k}{k}}{t} + \frac{k}{m}(\pm\frac{f_k}{k}) = \pm \frac{f_k}{m}
 \]
 Den fuldstændige løsning til de inhomogene differentialligninger bliver altså
 \begin{equation}
-    x(t) = A\sin\omega t + B\cos\omega t \pm \frac{f_k}{2k}
+    x(t) = A\sin\omega t + B\cos\omega t \pm \frac{f_k}{k}
 \end{equation}
 Nu bliver det dog besværligt. Eftersom at bevægelsesligningerne ændrer sig hver gang bevægelsesretningen skifter, 
 bliver vi nødt til rekursivt at finde start betingelserne hver gang bevægelsesretningen skifter.
@@ -41,62 +42,62 @@ Start betingelserne vil hver gang være en start amplitude $x(0) = x_n$ og en st
 
 Hvis vi starter vores bevægelse i amplitude $-x_0$, bliver bevægelsesbetingelserne efter indsættelse i (2)
 \begin{align*}
-    x(0) &= B - \frac{f_k}{2k} = -x_0 \implies B = -x_0 + \frac{f_k}{2k} \\
+    x(0) &= B - \frac{f_k}{k} = -x_0 \implies B = -x_0 + \frac{f_k}{k} \\
     x'(0) &= \omega A = 0 \implies A = 0 \\
     \shortintertext{$A$ og $B$ indsættes i (2)}
-    x(t) &= (-x_0 + \frac{f_k}{2k})\cos \omega t - \frac{f_k}{2k}
+    x(t) &= (-x_0 + \frac{f_k}{k})\cos \omega t - \frac{f_k}{k}
 \end{align*}
 Bemærk at konstant ledet har negativt fortegn da vi bevæger os i den positive x-retning, da startamplituden er negativ.
 Som sagt beskriver denne forskrift kun bevægelsen indtil at den ændrer bevægelsesretning. 
 Hvis vi vil finde forskiften for bevægelsen efterfølgende, bliver vi nødt til at vide hvad startamplituden er for den nye bevægelse.
 Den kan vi nemt finde som anden gang et hastigheden er 0.
 \[
-x'(t) = \omega(x_0 - \frac{f_k}{2k})\sin \omega t = 0
+x'(t) = \omega(x_0 - \frac{f_k}{k})\sin \omega t = 0
 \]
 Da de andre termer ikke er 0, og $t = 0$ ikke er en valid løsning, da det er hvor bevægelses starter, må det være næste nulpunkt, nemlig $t = \frac{\pi}{\omega}$. 
 Let mærke til at perioden er uafhængig af amplituden.
 Indsætter vi den tid i vores udtryk for $x(t)$, får vi 
 \[
-x(\frac{\pi}{\omega}) = x_0 - \frac{f_k}{k} \equiv x_1
+x(\frac{\pi}{\omega}) = x_0 - \frac{2f_k}{k} \equiv x_1
 \]
 Anvender vi den amplitude som startbetingelser for bevægelsen tilbage i negativ x-retningen, får vi bevægelsesligningen:
 \[
-x(t) = (x_1 - \frac{f_k}{2k})\cos \omega t + \frac{f_k}{2k}
+x(t) = (x_1 - \frac{f_k}{k})\cos \omega t + \frac{f_k}{k}
 \]
 Hvilket leder til at den næste start amplitude bliver 
 \[
--x_2 \equiv x_1 - \frac{f_k}{k}
+-x_2 \equiv x_1 - \frac{2f_k}{k}
 \]
-Vi ser at amplituderne falder med $\frac{f_k}{k}$ hver gang den skifter retning, og at de dermed følger rekursionsligningen
+Vi ser at amplituderne falder med $\frac{2f_k}{k}$ hver gang den skifter retning, og at de dermed følger rekursionsligningen
 \begin{equation}
-    (-1)^{n+1} x_{n+1} = x_n - \frac{f_k}{k}
+    (-1)^{n+1} x_{n+1} = x_n - \frac{2f_k}{k}
 \end{equation}
-Rekursionsligningen er her skrevet på en meget akavet form, for at gøre det klart, at den absolutte amplitude falder med $\frac{f_k}{k}$, for hver retninge skift, 
+Rekursionsligningen er her skrevet på en meget akavet form, for at gøre det klart, at den absolutte amplitude falder med $\frac{2f_k}{k}$, for hver retninge skift, 
 og at fortegnet blot er for at sige i hvilken ende bevægelsen starter. På en matematisk pænere måde kan vi løse rekursionsligningen til
 \begin{equation}
-    x(n) = (-1)^n (-x_0 + n \frac{f_k}{k})
+    x(n) = (-1)^n (-x_0 + n \frac{2f_k}{k})
 \end{equation}
 Dette er i sig selv et interessant resultat, men vi kan endvidere bruge det til at bestemme hvor at bevægelsen vil stoppe. 
 Bevægelsen stopper ikke altid i 0, som ellers ville have været ens første indskud, men kan i stedet stoppe indenfor et interval, givet ved;
 \begin{equation*}
-    2kx \leq f_s
+    kx \leq f_s
 \end{equation*}
 hvor $f_s = \mu_s n_1 + \delta_s n_2$. Altså vil bevægelsen stoppe hvis at fjeder kraften på massen i dens udstrakte position (hvor $v = 0$ og den statiske gnidningskraft dermed tager over), 
 er mindre eller ligmed den statiske gnidningskraft (der som oftest er højere end den kinetiske). Vi kan altså definere en kritisk afstand, hvor at det sidste udsving vil forekomme indenfor.
 \begin{equation}
-    x_c \equiv \frac{f_s}{2k}
+    x_c \equiv \frac{f_s}{k}
 \end{equation}
 Dermed må $n_{\textup{slut}}$, altså antallet af gange den skifter retning inden den stopper, 
 være større eller ligmed, forskellen imellem start amplituden og den kritiske afstand (altså hvor meget amplituden er nødt til at falde før den kan stoppe), divideret med hvor meget amplituden falder med per retningeskift.
 \begin{equation}
-    n_{\textup{slut}} \geq \frac{x_0 - x_c}{\frac{f_k}{k}} = \frac{k(x_0 - x_c)}{f_k}
+    n_{\textup{slut}} \geq \frac{x_0 - x_c}{\frac{2f_k}{k}} = \frac{k(x_0 - x_c)}{2f_k}
 \end{equation}
 Da massen er nødt til at være i hvilke før den kan stoppe, og dermed i en udstakt position og ikke et sted imellem, er $n$ nødt til at være et heltal. 
 Dermed kan vi runde højresiden i (6) op, og finde det præcise antal af "rebounds" (retningeskift), der vil forekomme før massen stopper.
 \begin{equation}
-    n_{\textup{slut}} = \left \lceil \frac{k(x_0 - x_c)}{f_k} \right \rceil
+    n_{\textup{slut}} = \left \lceil \frac{k(x_0 - x_c)}{2f_k} \right \rceil
 \end{equation}
 Dermed vil slutpositionen blive
 \begin{equation}
-    x(n_{\textup{slut}}) = (-1)^{n_{\textup{slut}}} (-x_0 + n_{\textup{slut}} \frac{f_k}{k})
+    x(n_{\textup{slut}}) = (-1)^{n_{\textup{slut}}} (-x_0 + n_{\textup{slut}} \frac{2f_k}{k})
 \end{equation}
