@@ -28,11 +28,11 @@ Det ligner næsten af den er helt gnidningsfri i den ene retning, da amplituden 
 Dette er meget i modstrid med hvad vi havde forventet, og også enormt urealistisk, at bevægelsen skulle være helt gnidningsfri i en af retningerne. 
 Vi vil derfor tillade os at tilføje et kunstigt offset, da vi mistænker at nulpunktet er forkert placeret, får at undersøge hvilken effekt dette ville have. 
 Dette gør vi ved at bestemme gennemsnittet af de høje værdier minus gennemsnittet af de lave, divideret med 4, da et offset får afstande fra top til bund til at falde med det dobbelte offset, 
-og afstande fra bund til top ville stige med det dobbelte offset, altså tæller den med 4 gange.
+og afstande fra bund til top ville stige med det dobbelte offset, altså tæller den med 4 gange. For eksempel, hvis de høje værdier lå på 10 og de lave på 0 (ligesom figur \ref{fig:dårlig_graf}),
+ville vi bruge et offset på $\frac{10}{4}=2.5$, da de høje værdier dermed ville falde med 5, og de lave ville stige med 5, altså ville de begge ende ved den samme værdi som ønsket.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\linewidth,origin=c]{figures/n0.00-maks3-offset.png}
     \caption{Databehandling med offset}
     \label{fig:offset_graf}
 \end{figure}
-
