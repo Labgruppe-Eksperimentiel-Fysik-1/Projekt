@@ -10,7 +10,7 @@
 Betragt et system af en masse forbundet til 2 fjedrer, en i hver ende, der hver er forbundet til en væg, med fjeder konstanterne $k_1$ og $k_2$. 
 Massen er placeret på en vandret overflade med friktionskoefficienter $\mu_s$ og $\mu_k$. 
 Fjedrernes bevægelse har også friktion med en anden friktionskoefficient $\delta_s$ og $\delta_k$. 
-Normalkraften mellem overfladen og massen, samt mellem fjeder og dens overflade er ikke nødvendigvis den samme, og betegnes derfor seperat med $n_1$ og $n_2$
+Normalkraften mellem overfladen og massen, samt mellem fjeder og dens overflade er ikke nødvendigvis den samme, og betegnes derfor seperat med $n_1$ og $n_2$.
 Vi betegner massen af det samlede oscillerende legeme med $m$. 
 
 Newtons anden lov for systemet afhænger af hvilken retning vi bevæger os i. 
@@ -37,7 +37,7 @@ Den fuldstændige løsning til de inhomogene differentialligninger bliver altså
     x(t) = A\sin\omega t + B\cos\omega t \pm \frac{f_k}{k}
 \end{equation}
 Nu bliver det dog besværligt. Eftersom at bevægelsesligningerne ændrer sig hver gang bevægelsesretningen skifter, 
-bliver vi nødt til rekursivt at finde start betingelserne hver gang bevægelsesretningen skifter.
+bliver vi nødt til rekursivt at finde startbetingelserne hver gang bevægelsesretningen skifter.
 Start betingelserne vil hver gang være en start amplitude $x(0) = x_n$ og en start hastighed $x'(0) = 0$. Denne er altid nul når bevægelsesretningen skifter, da dette sker i en fuldt udstrakt position hvor alt den kinetiske energi er lagret i fjedrerne.
 
 Hvis vi starter vores bevægelse i amplitude $-x_0$, bliver bevægelsesbetingelserne efter indsættelse i (2)
@@ -55,7 +55,7 @@ Den kan vi nemt finde som anden gang et hastigheden er 0.
 x'(t) = \omega(x_0 - \frac{f_k}{k})\sin \omega t = 0
 \]
 Da de andre termer ikke er 0, og $t = 0$ ikke er en valid løsning, da det er hvor bevægelses starter, må det være næste nulpunkt, nemlig $t = \frac{\pi}{\omega}$. 
-Let mærke til at perioden er uafhængig af amplituden.
+Læg mærke til at perioden er uafhængig af amplituden.
 Indsætter vi den tid i vores udtryk for $x(t)$, får vi 
 \[
 x(\frac{\pi}{\omega}) = x_0 - \frac{2f_k}{k} \equiv x_1
@@ -72,7 +72,7 @@ Vi ser at amplituderne falder med $\frac{2f_k}{k}$ hver gang den skifter retning
 \begin{equation}
     (-1)^{n+1} x_{n+1} = x_n - \frac{2f_k}{k}
 \end{equation}
-Rekursionsligningen er her skrevet på en meget akavet form, for at gøre det klart, at den absolutte amplitude falder med $\frac{2f_k}{k}$, for hver retninge skift, 
+Rekursionsligningen er her skrevet på en meget akavet form, for at gøre det klart, at den absolutte amplitude falder med $\frac{2f_k}{k}$, for hver retningsskift, 
 og at fortegnet blot er for at sige i hvilken ende bevægelsen starter. På en matematisk pænere måde kan vi løse rekursionsligningen til
 \begin{equation}
     x(n) = (-1)^n (-x_0 + n \frac{2f_k}{k})
@@ -88,12 +88,12 @@ er mindre eller ligmed den statiske gnidningskraft (der som oftest er højere en
     x_c \equiv \frac{f_s}{k}
 \end{equation}
 Dermed må $n_{\textup{slut}}$, altså antallet af gange den skifter retning inden den stopper, 
-være større eller ligmed, forskellen imellem start amplituden og den kritiske afstand (altså hvor meget amplituden er nødt til at falde før den kan stoppe), divideret med hvor meget amplituden falder med per retningeskift.
+være større eller ligmed, forskellen imellem startamplituden og den kritiske afstand (altså hvor meget amplituden er nødt til at falde før den kan stoppe), divideret med hvor meget amplituden falder med per retningsskift.
 \begin{equation}
     n_{\textup{slut}} \geq \frac{x_0 - x_c}{\frac{2f_k}{k}} = \frac{k(x_0 - x_c)}{2f_k}
 \end{equation}
-Da massen er nødt til at være i hvilke før den kan stoppe, og dermed i en udstakt position og ikke et sted imellem, er $n$ nødt til at være et heltal. 
-Dermed kan vi runde højresiden i (6) op, og finde det præcise antal af "rebounds" (retningeskift), der vil forekomme før massen stopper.
+Da massen er nødt til at være i hvile før den kan stoppe, og dermed i en udstakt position og ikke et sted imellem, er $n$ nødt til at være et heltal. 
+Dermed kan vi runde højresiden i (6) op, og finde det præcise antal af "rebounds" (retningsskift), der vil forekomme før massen stopper.
 \begin{equation}
     n_{\textup{slut}} = \left \lceil \frac{k(x_0 - x_c)}{2f_k} \right \rceil
 \end{equation}
