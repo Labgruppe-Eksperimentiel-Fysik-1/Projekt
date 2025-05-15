@@ -16,7 +16,7 @@ og man skal selv indlægge en målestok i hver optagelse, hvilket vil sige at m�
 Afvigelserne er nok ikke meget større end nogle pixels, men den er helt sikkert tilstede.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\linewidth,origin=c]{figures/n0.00-maks3.png}
+    \includegraphics[width=0.8\linewidth,origin=c]{figures/non0.00-maks3.png}
     \caption{Databehandling uden offset}
     \label{fig:dårlig_graf}
 \end{figure}
@@ -30,9 +30,38 @@ Vi vil derfor tillade os at tilføje et kunstigt offset, da vi mistænker at nul
 Dette gør vi ved at bestemme gennemsnittet af de høje værdier minus gennemsnittet af de lave, divideret med 4, da et offset får afstande fra top til bund til at falde med det dobbelte offset, 
 og afstande fra bund til top ville stige med det dobbelte offset, altså tæller den med 4 gange. For eksempel, hvis de høje værdier lå på 10 og de lave på 0 (ligesom figur \ref{fig:dårlig_graf}),
 ville vi bruge et offset på $\frac{10}{4}=2.5$, da de høje værdier dermed ville falde med 5, og de lave ville stige med 5, altså ville de begge ende ved den samme værdi som ønsket.
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\linewidth,origin=c]{figures/n0.00-maks3-offset.png}
+    \includegraphics[width=0.8\linewidth,origin=c]{figures/n0.00-maks3.png}
     \caption{Databehandling med offset}
     \label{fig:offset_graf}
+
 \end{figure}
+
+\noindent
+Offsettet kan dog kun gøre målinger der var konstante i de 2 retninger til at blive den samme værdi. 
+Målingerne hvor dæmpningen ikke er konstant i nogen af retningerne afviger fra forventningen post offset.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth,origin=c]{figures/n41.2-maks2.png}
+    \caption{Eksempel på måling der afviger på trods af offset}
+    \label{fig:dårlig_offset_graf}
+\end{figure}
+
+\noindent
+Hvis vi pålægger alle vores målinger et offset beregnet på måden beskrevet tidligere, 
+og derefter finder gennemsnittet af dæmpningsfaktoren og plotter det som funktion af $n_1$ får vi følgende plot
+
+\newpage
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth,origin=c]{figures/Dæmpningsfaktor_plot.png}
+    \caption{Dæmpningsfaktor som funktion af $n_1$}
+    \label{fig:dæmpningsfaktor}
+\end{figure}
+
+\noindent
+Her medtager vi både målingerne der følger vores forventninger og dem der ikke gør. 
