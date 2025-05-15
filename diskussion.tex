@@ -1,4 +1,5 @@
 \chapter{Diskussion}
+\section{Overensstemmelse med teori}
 Uden offset, passer vores data meget dårlig med vores hypotese, der blandt andet var, 
 at amplituden af bevægelsen ville falde med en konstant værdi hver gang, og at bevægelsen ville stoppe, 
 så snart at dens obnåede en hastighed på 0, indenfor den kritiske afstand. 
@@ -7,14 +8,22 @@ Samtidigt ville den stoppe tæt på 0, og så svinge tilbage længere væk fra 0
 Hvis vi lagde et offset til der minimerede afstanden mellem forskellene, i et forsøg på at få dæmpningen til at blive ens i begge retninger, får vi netop hvad vi forventede. 
 Som man kan se på figur \ref{fig:offset_graf}, var det muligt at få dem til at blive helt konstante (inden for usikkerhed), og offsettet løste også problemet med at den standsede for langt væk fra nul. 
 På figur \ref{fig:offset_graf} stopper bevægelsen nemlig tættest på 0, i modsætning til hvad den gjorde på figur \ref{fig:dårlig_graf} uden offsettet.
+Offsettet fikser dog ikke alt. Der var stadig noget data hvor at dæmpningen ikke var konstant i nogen retning (f.eks fig \ref{fig:dårlig_offset_graf}), 
+og i alt dataen havde vi et outlier punkt lige i starten, hvor den konsekvent faldt meget mere end i resten af bevægelsen.
 
+På figur \ref{fig:dæmpningsfaktor} ser vi hvordan at amplitudefaldet meget klart stiger ved meget høje værdier af $n_1$. 
+Dette er forventeligt eftersom at loddet har en vægt på omkring de $0.4$N, og en normalkraft over denne værdi, ville øge den totale normalkraft mellem fjeder og newtonmeter, samt lod og overflade.
+Dette sker fordi at hvis $n_1$ er ligmed eller under de 0.4 N, vil kraften blot gøre at fjedrerne holder mindre af loddet vægt, men den samlede normalkraft, altså summen af $n_1$ og $n_2$ vil forblive konstant (specielt ville $n_1 = mg$ betyde at fjedrerne ikke holder noget af vægten og $n_2 = 0$). 
+En normalkraft over dens vægt ville dog derimod betyde at fjedrerne er nødt til at skubbe igen for at undgå at massen accellerer opad, og den totale normalkraft, og dermed gnindningen, ville dermed stige.
+Det er svært at udtale sig omkring en tendens mellem $n_1 = 0$ og $n_1 = 0.4$, da punkterne afviger så meget fra hinanden. Hvis at $\mu_k = \delta_k$ ville vi forvente at konstant værdi, men hvis de er forskellige kunne der godt være en lineær tendens, 
+men det kan ikke vurderes med kvaliteten af målinger vi har opnået her. 
+\section{Årsager til afvigelser}
 At offsettet virker forklarer dog ikke hvorfor det var nødvendigt til at starte med. Vi forventer at newtonmetrerne ikke har været helt lige stærke, 
 enten fordi vi ikke kalibrerede dem godt nok, eller fordi de ikke har været helt i samme højde, og de dermed har skubbet skævt til loddet.
 Før at vi kan være sikre på at nulpunktet var problemet, ville vi altså være nødt til at udføre eksperimentet igen, hvor vi sikrer os at skubber med samme kraftkonstant, 
 men vi kunne alligevel forsøge at se hvilke resultater vi kunne få under antagelse af at det var problemet. 
 
-Offsettet fikser dog ikke alt. Der var stadig noget data hvor at dæmpningen ikke var konstant i nogen retning, 
-og i alt dataen havde vi et outlier punkt lige i starten, hvor den konsekvent faldt meget mere end i resten af optagelsen.
-Dette kan højst sandsynligt forklares ved at energi har kunnet forlade systemet på andre ikke hensigtsmæssige måder. 
+Det at nogle af målingerne stadigvæk afviger efter offsettet, samt outlier punktet i starten af målingerne, kunne forklares ved at energi har kunnet forlade systemet på andre ikke hensigtsmæssige måder. 
 For eksempel kunne det tænkes at energien går til resten af opstillingen igennem rystelser, og vi observerede også at der skete bevægelse vinkelret på den ønskede bevægelsesretning.
 Der er selvfølgelig også vindmodstand som vi totalt har ignoreret, men vi tænker stadig den er negligibel da vi arbejder ved ret lave hastigheder.
+
