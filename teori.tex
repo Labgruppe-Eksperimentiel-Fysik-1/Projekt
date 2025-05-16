@@ -104,8 +104,16 @@ Dermed vil slutpositionen blive
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\linewidth,origin=c]{figures/Simulation.png}
-    \caption{Simulering af differentalligningerne med $n_1=n_2=1$N, $k = 2$ N/m, $\mu_s = \delta_s = 2$, og $\mu_k = \delta_k = 1$}
+    \caption{Simulering af differentalligningerne med $n_1=n_2=1$N, $k = 5$ N/mm, $\mu_s = \delta_s = 2$, og $\mu_k = \delta_k = 1$}
     \label{fig:simulering}
 \end{figure}
-Hvis vi løser differentialligningerne numerisk får vi ovenstående resultat, hvilket er i overrensstemmelse med de teoretiske resultater lige gennemgået, 
-nemlig at dæmpningsfaktoren er konstant, og at den ikke slutter direkte i 0.
+Hvis vi løser differentialligningerne numerisk får vi resultatet på figur \ref{fig:simulering}, hvilket er i overrensstemmelse med de teoretiske resultater lige gennemgået. 
+Specielt er dæmpningsfaktoren konstant (afvigelser kommer fra numerisk usikkerhed, alle værdierne er som man kan se inden for 0.0001 fra hinanden) og ligmed $\frac{2f_k}{k} = \frac{4 \text{N}}{5 \frac{\text{N}}{\text{mm}}} = 0.8 \text{mm}$.
+Vi kan også beregne det teoretiske antal toppunkter (fra (7)). \[
+    n_{\textup{slut}} = \left \lceil \frac{(5 \text{mm} - 0.8 \text{mm})}{0.8 \text{mm}} \right \rceil = 6 \text{mm}
+\] 
+Hvilket stemmer, og vi kan nu finde slutpunktet (fra (8))
+\[
+x(6) = (-1)^{6} (-5\text{mm} + 6 \cdot 0.8 \text{mm}) = 0.2 \text{mm}
+\]
+Hvilket igen stemmer overens med simuleringen.
