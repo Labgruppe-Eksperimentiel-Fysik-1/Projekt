@@ -68,11 +68,11 @@ Hvilket leder til at den næste start amplitude bliver
 \[
 -x_2 \equiv x_1 - \frac{2f_k}{k}
 \]
-Vi ser at amplituderne falder med $\frac{2f_k}{k}$ hver gang den skifter retning, og at de dermed følger rekursionsligningen\cite{rekursion}
+Vi ser at amplituderne falder med $\frac{2f_k}{k}$ hver gang den skifter retning, og at de dermed følger rekursionsligningen \cite{rekursion}
 \begin{equation}
     (-1)^{n+1} x_{n+1} = x_n - \frac{2f_k}{k}
 \end{equation}
-Rekursionsligningen er her skrevet på en meget akavet form, for at gøre det klart, at den absolutte amplitude falder med $\frac{2f_k}{k}$, for hver retningsskift, 
+Rekursionsligningen er her skrevet på en meget akavet form, for at gøre det klart, at den absolutte amplitude falder med $\frac{2f_k}{k}$ (dæmpningsfaktoren), for hver retningsskift, 
 og at fortegnet blot er for at sige i hvilken ende bevægelsen starter. På en matematisk pænere måde kan vi løse rekursionsligningen til
 \begin{equation}
     x(n) = (-1)^n (-x_0 + n \frac{2f_k}{k})
@@ -101,3 +101,11 @@ Dermed vil slutpositionen blive
 \begin{equation}
     x(n_{\textup{slut}}) = (-1)^{n_{\textup{slut}}} (-x_0 + n_{\textup{slut}} \frac{2f_k}{k})
 \end{equation}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth,origin=c]{figures/Simulation.png}
+    \caption{Simulering af differentalligningerne med $n_1=n_2=1$N, $k = 2$ N/m, $\mu_s = \delta_s = 2$, og $\mu_k = \delta_k = 1$}
+    \label{fig:simulering}
+\end{figure}
+Hvis vi løser differentialligningerne numerisk får vi ovenstående resultat, hvilket er i overrensstemmelse med de teoretiske resultater lige gennemgået, 
+nemlig at dæmpningsfaktoren er konstant, og at den ikke slutter direkte i 0.
